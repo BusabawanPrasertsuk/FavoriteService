@@ -17,7 +17,6 @@ public class FavoriteQueryController {
 
     @GetMapping(value = "/getFavorite")
     public ArrayList getFavorites() {
-        System.out.println("Naa heeeeeeeeeeeeeeeeeeeee");
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setContentType("application/json");
         Object favBook = rabbitTemplate.convertSendAndReceive("FavoriteExchange", "getFavorite", "");
