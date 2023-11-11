@@ -3,7 +3,7 @@ package com.example.favoriteservice.core.events;
 import lombok.Data;
 
 @Data
-public class FavoriteCreateEvent {
+public class FavoriteDeleteEvent {
     private String favoriteId;
     private String bookId; // Book data type
     private String userId;

@@ -13,7 +13,7 @@ public class FavoriteEntity implements Serializable {
 
     @Id
     private String favoriteId;
-    private String book; // Book data type
+    private String bookId; // Book data type
     private String userId;
 
 }

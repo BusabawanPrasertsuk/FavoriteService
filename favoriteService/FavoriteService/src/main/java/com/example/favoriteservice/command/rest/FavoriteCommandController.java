@@ -1,6 +1,5 @@
 package com.example.favoriteservice.command.rest;
 
-import com.example.favoriteservice.query.rest.FavoriteRestModel;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ public class FavoriteCommandController {
     private RabbitTemplate rabbitTemplate;
 
     @GetMapping(value = "/addFavorite")
-    public String addFavoriteBook(@RequestBody AddFavoriteRestModel model){
+    public String addFavoriteBook(@RequestBody FavoriteRestModel model){
         System.out.println("dai sak teeeeeeeeeeeeeeeeeeeeeeee");
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setContentType("application/json");
@@ -21,11 +20,17 @@ public class FavoriteCommandController {
 //        urn true;  ret
     }
 
-    @DeleteMapping(value = "/deleteFavorite")
-    public String deleteFavoriteBook(@PathVariable("id") String favoriteId){
+    @DeleteMapping(value = "/deleteFavorite/{favoriteId}")
+    public String deleteFavoriteBook(@PathVariable("favoriteId") String favoriteId){
         rabbitTemplate.convertAndSend("FavoriteExchange", "deleteFavorite", favoriteId);
         return "DELETE " + favoriteId;
     }
+
+//    @DeleteMapping("/deleteBook/{bookId}")
+//    public String deleteBook(@PathVariable("bookId") String bookId) {
+//        rabbitTemplate.convertAndSend("Direct", "deleteBook", bookId);
+//        return "Delete Book ID: " + bookId;
+//    }
 
 //    @RequestMapping(value = "/addFavorite", method = RequestMethod.POST)
 //    public Boolean addFavorite(@RequestBody Favorite favorite) {

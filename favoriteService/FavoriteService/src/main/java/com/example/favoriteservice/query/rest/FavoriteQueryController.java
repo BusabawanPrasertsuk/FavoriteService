@@ -17,9 +17,20 @@ public class FavoriteQueryController {
 
     @GetMapping(value = "/getFavorite")
     public ArrayList getFavorites() {
+        System.out.println("Naa heeeeeeeeeeeeeeeeeeeee");
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setContentType("application/json");
         Object favBook = rabbitTemplate.convertSendAndReceive("FavoriteExchange", "getFavorite", "");
         return (ArrayList) favBook;
+//        return "eiei";
+    }
+
+    @GetMapping("/getBook")
+    public ArrayList getBooks() {
+        MessageProperties messageProperties = new MessageProperties();
+        messageProperties.setContentType("application/json");
+        Object book = rabbitTemplate.convertSendAndReceive("FavoriteExchange", "getBook", "");
+        return (ArrayList) book;
+//        return "eiei";
     }
 }

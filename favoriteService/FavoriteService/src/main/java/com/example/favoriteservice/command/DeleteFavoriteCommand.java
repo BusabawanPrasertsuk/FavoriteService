@@ -4,14 +4,11 @@ import lombok.Builder;
 import lombok.Data;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-
 @Builder
 @Data
-public class CreateFavoriteCommand {
+public class DeleteFavoriteCommand {
     @TargetAggregateIdentifier
-    private final String favoriteId;
-    private final String bookId;
-    private final String userId;
-
-
+    private String favoriteId;
+    private String bookId; // Book data type
+    private String userId;
 }
