@@ -3,7 +3,8 @@
 * Get Book: (GET) /favorite-service/getBook
 * Get Favorite: (GET) /favorite-service/getFavorite
 * Add Favorite: (GET) /favorite-service/addFavorite
-* Delete Favorite: (DELETE) /favorite-service/deleteFavorite/{favoriteId} 
+* Delete Favorite: (DELETE) /favorite-service/deleteFavorite/{BookId}
+* Get BookById: (GET) /favorite-service/getBook/{BookId}
 ### RabbitMQ
 * Get Book
   * Queues: GetBookQueue
@@ -21,3 +22,7 @@
   * Queues: DeleteFavoriteQueue
   * Exchanges: FavoriteExchange
   * Routing key: deleteFavorite
+* get bookById
+ * Queues: GetBookIdQueue
+ * Exchanges: FavoriteExchange
+ * Routing key: getBookId
