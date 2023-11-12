@@ -5,6 +5,7 @@ import com.example.favoriteservice.core.data.BookRepository;
 //import com.example.favoriteservice.query.FindBooksByBookIdQuery;
 import com.example.favoriteservice.core.data.FavoriteEntity;
 import com.example.favoriteservice.core.data.FavoriteRepository;
+import com.example.favoriteservice.query.FindBooksByBookIdQuery;
 import com.example.favoriteservice.query.FindBooksQuery;
 import com.example.favoriteservice.query.FindFavoritesQuery;
 import org.axonframework.queryhandling.QueryHandler;
@@ -48,6 +49,19 @@ public class FavoriteQueryHandler {
             favRestModel.add(favoriteRestModel);
         }
         return favRestModel;
+    }
+
+    @QueryHandler
+    public BookRestModel findBooksByBookId(FindBooksByBookIdQuery query) {
+        BookEntity bookEntity = bookRepository.findBookEntityByBookId(query.getBookId());
+        if (bookEntity != null) {
+            BookRestModel bookRestModel = new BookRestModel();
+            BeanUtils.copyProperties(bookEntity, bookRestModel);
+            return bookRestModel;
+        } else {
+            return null;
+        }
+
     }
 
 }
