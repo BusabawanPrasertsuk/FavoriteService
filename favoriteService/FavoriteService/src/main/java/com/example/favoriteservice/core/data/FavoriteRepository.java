@@ -9,5 +9,8 @@ public interface FavoriteRepository extends MongoRepository<FavoriteEntity, Stri
     @Query(value = "{ 'favoriteId' : ?0 }")
     public FavoriteEntity findFavoriteEntitiesByFavoriteId(String favoriteId);
 
+    @Query(value = "{ 'bookId' : ?0 }", delete = true)
+    public FavoriteEntity findFavoriteEntitiesByBookId(String bookId);
+
 }
 

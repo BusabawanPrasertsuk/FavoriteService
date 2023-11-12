@@ -41,10 +41,10 @@ public class FavoriteCommandService {
 
 
     @RabbitListener(queues = "DeleteFavoriteQueue")
-    public void deleteBook(String favoriteId) {
-        System.out.println("DELETE FAVORITE: " + favoriteId);
+    public void deleteBook(String bookId) {
+        System.out.println("DELETE FAVORITE: " + bookId);
 
-        FavoriteEntity favoriteEntity = favoriteRepository.findFavoriteEntitiesByFavoriteId(favoriteId);
+        FavoriteEntity favoriteEntity = favoriteRepository.findFavoriteEntitiesByBookId(bookId);
         System.out.println(favoriteEntity);
 
         if (favoriteEntity != null) {
@@ -60,7 +60,7 @@ public class FavoriteCommandService {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("favorite not found with ID: " + favoriteId);
+            System.out.println("favorite not found with ID: " + bookId);
         }
 
     }

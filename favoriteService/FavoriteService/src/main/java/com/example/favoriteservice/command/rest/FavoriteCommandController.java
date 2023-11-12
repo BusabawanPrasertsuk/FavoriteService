@@ -19,10 +19,10 @@ public class FavoriteCommandController {
         return "add daiiiiiiiiiii";
     }
 
-    @DeleteMapping(value = "/deleteFavorite/{favoriteId}")
-    public String deleteFavoriteBook(@PathVariable("favoriteId") String favoriteId){
-        rabbitTemplate.convertAndSend("FavoriteExchange", "deleteFavorite", favoriteId);
-        return "DELETE " + favoriteId;
+    @GetMapping(value = "/deleteFavorite/{bookId}")
+    public String deleteFavoriteBook(@PathVariable("bookId") String bookId){
+        rabbitTemplate.convertAndSend("FavoriteExchange", "deleteFavorite", bookId);
+        return "DELETE " + bookId;
     }
 
 

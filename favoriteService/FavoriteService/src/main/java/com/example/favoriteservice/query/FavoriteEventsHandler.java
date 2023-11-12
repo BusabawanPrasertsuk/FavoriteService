@@ -31,8 +31,9 @@ public class FavoriteEventsHandler {
     public void on(FavoriteDeleteEvent event) {
         System.out.println("DELETE favorite in mongoDB");
         FavoriteEntity favoriteEntity = new FavoriteEntity();
+        System.out.println("DELETE BOOK ID: " + favoriteEntity.getBookId());
         BeanUtils.copyProperties(event, favoriteEntity);
-        favoriteRepository.deleteById(favoriteEntity.getFavoriteId());
+        favoriteRepository.findFavoriteEntitiesByBookId(favoriteEntity.getBookId());
     }
 
 }
