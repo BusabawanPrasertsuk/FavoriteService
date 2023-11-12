@@ -3,7 +3,7 @@
 * Get Book: (GET) /favorite-service/getBook
 * Get Favorite: (GET) /favorite-service/getFavorite
 * Add Favorite: (GET) /favorite-service/addFavorite
-* Delete Favorite: (DELETE) /favorite-service/deleteFavorite/{BookId}
+* Delete Favorite: (GET) /favorite-service/deleteFavorite/{BookId}
 * Get BookById: (GET) /favorite-service/getBook/{BookId}
 ### RabbitMQ
 * Get Book
