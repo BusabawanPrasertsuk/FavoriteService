@@ -50,17 +50,4 @@ public class FavoriteQueryHandler {
         return favRestModel;
     }
 
-//    @QueryHandler
-//    public BookRestModel findBooksByBookId(FindBooksByBookIdQuery query) {
-//        BookEntity bookEntity = bookRepository.findBookByBookId(query.getBookId());
-//
-//        if (bookEntity != null) {
-//            BookRestModel bookRestModel = new BookRestModel();
-//            BeanUtils.copyProperties(bookEntity, bookRestModel);
-//            return bookRestModel;
-//        } else {
-//            return null;
-//        }
-//
-//    }
 }

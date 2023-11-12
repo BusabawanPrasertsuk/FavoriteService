@@ -24,20 +24,4 @@ public class BookEntity implements Serializable {
     private String status;
     private String userId;
 
-//    public BookEntity() {
-//    }
-//
-//    public BookEntity(String bookId, String title, String description, String category, String type, String cover, Integer view, Integer like, Integer comment, String status, String userId) {
-//        this.bookId = bookId;
-//        this.title = title;
-//        this.description = description;
-//        this.category = category;
-//        this.type = type;
-//        this.cover = cover;
-//        this.view = view;
-//        this.like = like;
-//        this.comment = comment;
-//        this.status = status;
-//        this.userId = userId;
-//    }
 }

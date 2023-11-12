@@ -39,10 +39,6 @@ public class FavoriteCommandService {
         }
     }
 
-//    @RabbitListener(queues = "DeleteFavoriteQueue")
-//    public void deleteFavorite(String favoriteId){
-//        System.out.println("Delete eiei " + favoriteId);
-//    }
 
     @RabbitListener(queues = "DeleteFavoriteQueue")
     public void deleteBook(String favoriteId) {

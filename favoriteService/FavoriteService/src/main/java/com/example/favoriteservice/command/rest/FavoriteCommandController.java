@@ -17,7 +17,6 @@ public class FavoriteCommandController {
         messageProperties.setContentType("application/json");
         rabbitTemplate.convertAndSend("FavoriteExchange", "addFavorite", model);
         return "add daiiiiiiiiiii";
-//        urn true;  ret
     }
 
     @DeleteMapping(value = "/deleteFavorite/{favoriteId}")
@@ -26,24 +25,5 @@ public class FavoriteCommandController {
         return "DELETE " + favoriteId;
     }
 
-//    @DeleteMapping("/deleteBook/{bookId}")
-//    public String deleteBook(@PathVariable("bookId") String bookId) {
-//        rabbitTemplate.convertAndSend("Direct", "deleteBook", bookId);
-//        return "Delete Book ID: " + bookId;
-//    }
-
-//    @RequestMapping(value = "/addFavorite", method = RequestMethod.POST)
-//    public Boolean addFavorite(@RequestBody Favorite favorite) {
-//        System.out.println("Add >>>>>>>>>> " + favorite);
-//        rabbitTemplate.convertAndSend("FavoriteExchange", "addFavorite", favorite);
-//        return true;
-//    }
-//
-//    @RequestMapping(value = "/deleteFavorite", method = RequestMethod.DELETE)
-//    public Boolean deleteFavorite(@RequestBody Favorite favorite) {
-//        System.out.println("Delete >>>>>>>>>> " + favorite);
-//        rabbitTemplate.convertAndSend("FavoriteExchange", "deleteFavorite", favorite);
-//        return true;
-//    }
 
 }

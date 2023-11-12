@@ -21,7 +21,6 @@ public class FavoriteQueryController {
         messageProperties.setContentType("application/json");
         Object favBook = rabbitTemplate.convertSendAndReceive("FavoriteExchange", "getFavorite", "");
         return (ArrayList) favBook;
-//        return "eiei";
     }
 
     @GetMapping("/getBook")
@@ -30,6 +29,5 @@ public class FavoriteQueryController {
         messageProperties.setContentType("application/json");
         Object book = rabbitTemplate.convertSendAndReceive("FavoriteExchange", "getBook", "");
         return (ArrayList) book;
-//        return "eiei";
     }
 }
